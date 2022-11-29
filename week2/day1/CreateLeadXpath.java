@@ -24,9 +24,11 @@ public class CreateLeadXpath {
 		 driver.findElement(By.xpath("//a[text() = 'Leads']")).click();
 		 driver.findElement(By.xpath("//a[text() = 'Create Lead']")).click();
 		 
-		 driver.findElement(By.xpath("//input[@id = 'createLeadForm_companyName']")).sendKeys("Cricket Corner");
-		 driver.findElement(By.xpath("//input[@id = 'createLeadForm_firstName']")).sendKeys("Ricky");
-		 driver.findElement(By.xpath("//input[@id = 'createLeadForm_lastName']")).sendKeys("Ponting");
+		 driver.findElement(By.xpath("//input[@id = 'createLeadForm_companyName']")).sendKeys("Lead Duplicate");
+		 driver.findElement(By.xpath("//input[@id = 'createLeadForm_firstName']")).sendKeys("Adam");
+		 driver.findElement(By.xpath("//input[@id = 'createLeadForm_lastName']")).sendKeys("Gilchrist");
+		// driver.findElement(By.xpath("//input[@id = 'createLeadForm_primaryPhoneNumber']")).sendKeys("9972311179");
+		 driver.findElement(By.xpath("//input[@id = 'createLeadForm_primaryEmail']")).sendKeys("rahulkrish1905@gmail.com");
 		 
 		 driver.findElement(By.xpath("//input[@name = 'submitButton']")).click();
 		 
