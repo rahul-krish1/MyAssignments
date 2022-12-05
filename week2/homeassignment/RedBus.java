@@ -52,8 +52,6 @@ public class RedBus {
 		 String Buses = driver.findElement(By.xpath("//span[contains(@class, 'busFound')]/parent::span")).getText();
 		 System.out.println(Buses);
 		 
-		 Thread.sleep(3000);
-		 
 //		 driver.findElement(By.className("custom-checkbox")).click();
 		 
 		 WebElement Sleeper = driver.findElement(By.xpath("//label[contains(text(), 'SLEEPER')]"));
@@ -64,10 +62,9 @@ public class RedBus {
 		 String Second = driver.findElement(By.xpath("(//div[contains(@class, 'travels')])[2]")).getText();
 		 System.out.println(Second);
 		 
-		 Thread.sleep(10000);
 		 
-		 driver.findElement(By.xpath("(//div[contains(@class, 'view-seats')])[2]")).click();
-		 
+		 WebElement viewSeats = driver.findElement(By.xpath("(//div[contains(@class, 'view-seats')])[2]"));
+		 driver.executeScript("arguments[0].click()", viewSeats);
 	}
 
 }

@@ -62,32 +62,44 @@ public class BookMyShow {
 		 String parking = driver.findElement(By.xpath("//div[contains(text(), 'Parking')]")).getText();
 		 System.out.println(parking);
 		 
-		 driver.findElement(By.xpath("//div[@class = 'cross-container']")).click();
+		 String parkFacility = "Parking Facility";
 		 
-		 Thread.sleep(3000);
+		 boolean parkingAvailable = parking.equalsIgnoreCase(parkFacility);
+		 System.out.println(parkingAvailable);
+		 
+		 driver.findElement(By.xpath("//div[@class = 'cross-container']")).click();
 		 
 		 driver.findElement(By.xpath("//div[contains(@class, '_available')]")).click();
 		 
 		 Thread.sleep(3000);
 		 
-		 driver.findElement(By.id("btnPopupAccept")).click();
+		 WebElement accept = driver.findElement(By.id("btnPopupAccept"));
+		 driver.executeScript("arguments[0].click()", accept);
 		 
-		 driver.findElement(By.xpath("//li[@class = '_active']")).click();
+		 WebElement seat = driver.findElement(By.xpath("//li[@class = '_active']"));
+		 driver.executeScript("arguments[0].click()", seat);
 		 
-		 driver.findElement(By.id("proceed-Qty")).click();
+		 WebElement selectSeats = driver.findElement(By.id("proceed-Qty"));
+		 driver.executeScript("arguments[0].click()", selectSeats);
 		 
 		 Thread.sleep(3000);
 		 
-		 driver.findElement(By.xpath("//a[@class = '_available']")).click();
+		 WebElement seatSelection = driver.findElement(By.xpath("//a[@class = '_available']"));
+		 driver.executeScript("arguments[0].click()", seatSelection);
 		 
 		 Thread.sleep(3000);
 		 
-		 driver.findElement(By.id("btmcntbook")).click();
+		 WebElement payment = driver.findElement(By.id("btmcntbook"));
+		 driver.executeScript("arguments[0].click()", payment);
 		 
 //		 driver.findElement(By.xpath("(//a[contains(text(), 'Pay')])[4]")).click();
 		 
-		 String subTotal = driver.findElement(By.id("subTT")).getText();
-		 System.out.println(subTotal);
+//		 String subTotal = driver.findElement(By.id("subTT")).getText();
+//		 System.out.println(subTotal);
+		 
+		 WebElement subTotal = driver.findElement(By.id("subTT"));
+		 String sumTotal = subTotal.getText();
+		 System.out.println(sumTotal);
 		 
 
 	}
